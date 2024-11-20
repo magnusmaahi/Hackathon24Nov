@@ -63,9 +63,6 @@ public class Main{
             }
         }
         } while(!tasks.isEmpty());
-
-
-        
     }
 
     public static void printTasks(ArrayList<Task> list) {
@@ -78,12 +75,5 @@ public class Main{
                 }
             }
         }
-    }
-  
-        //Branch test
-
-        //aditi_dev test
-
-        //commit change test aditi_dev
-  
+    }  
 }
