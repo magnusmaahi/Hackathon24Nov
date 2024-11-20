@@ -65,8 +65,5 @@ public class Main{
             }
         }
         } while(!tasks.isEmpty());
-        System.out.println("Hello World");
-
-        //Branch test
     }
 }
