@@ -17,6 +17,6 @@ public class Task{
 	}
 	
 	public String toString(){
-		return String.format("Description.          | Status.  | Priority.    | Time needed\n%-35s| %-9s| %-14s| %s mins", description, isCompleted, priority, timeNeeded);
+		return String.format("          Description.          |  Status.  |  Priority.  | Time needed\n%-35s| %-9s| %-14s| %s mins", description, isCompleted, priority, timeNeeded);
 	}
 }
