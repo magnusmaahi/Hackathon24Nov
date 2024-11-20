@@ -48,9 +48,7 @@ public class Main{
                 out.println("GUESS WHAT!! you got no tasks");
             }
             else{
-                for(Task task : tasks){
-                    out.println(task.toString());
-                }
+                printTasks(tasks);
             }
         }
         
@@ -65,5 +63,16 @@ public class Main{
             }
         }
         } while(!tasks.isEmpty());
+
+        
+    }
+
+    public static void printTasks(ArrayList<Task> list){
+        ArrayList<Task> sorted = new ArrayList<>();
+        for(int i = 0; i< list.size(); i++){
+            ArrayList<Task> temp = new ArrayList<>();
+            for(Task task: list){
+                if(task.get
+        }
     }
 }
