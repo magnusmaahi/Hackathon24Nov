@@ -21,11 +21,18 @@ public class Task{
 	}
 	
 	public Strring getPriority(){
-		return priority;
+		if (priority == 1) {
+			return "Right NOW!";
+		}
+		else if (priority == 2) {
+			return "ASAP";
+		} else {
+			return "End of day";
+		}
 	}
 	
 	public boolean getTime(){
-		return timeNe;
+		return timeNeeded;
 	}
   
 	public String toString(){
