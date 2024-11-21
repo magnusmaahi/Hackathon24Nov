@@ -108,13 +108,13 @@ public class Main {
         int opt, pN, t;
         String tN;
 
+        
+        do{
+            
         //main menu
         out.println("1. Create a new task\n2. Print my task list(s)\n3. Complete task\n4. Exit");
         opt = s.nextInt();
         s.nextLine();
-        
-        while (opt != 4) {
-            
             //Option 1
             if (opt == 1) {
                 out.print("Task name? (Character limit 40): ");
@@ -172,7 +172,7 @@ public class Main {
             out.println("1. Create a new task\n2. Print my task list(s)\n3. Complete task\n4. Exit");
             opt = s.nextInt();
             s.nextLine();
-        }
+        }while (opt != 4);
         
         out.println("Have a great day!");
     }
