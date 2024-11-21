@@ -47,7 +47,7 @@ public class Main {
 			// Option 2: Print task lists
 			else if (opt == 2) {
 				if (toDo.isEmpty()) {
-					out.println("GUESS WHAT!! you got no tasks");
+					out.println("GUESS WHAT!! You got no tasks!");
 				} else {
 					out.println("TO-DO List:\nDescription           | Priority | Time needed");
 					printTasks(toDo);
@@ -57,7 +57,7 @@ public class Main {
 
 		} while (opt != 3);
 
-		out.println("Have a great day!");
+		out.println("Enjoy your holidays!");
 	}
 
 	public static int time(int h, int m) {
