@@ -1,4 +1,4 @@
- public class Task{
+public class Task{
 	private String description;
 	private boolean isCompleted;
 	private int priority;
@@ -10,7 +10,6 @@
 		priority = p;
 		timeNeeded = t;
 	}
-	
 
 	//set method for the status
 	public void setCompleted(boolean status){
@@ -22,22 +21,14 @@
 	}
 	
 	public int getPriority(){
-		/* if (priority == 1) {
-			return "Right NOW!";
-		}
-		else if (priority == 2) {
-			return "ASAP";
-		} else {
-			return "End of day";
-		} */
 		return this.priority;
 	}
 	
 	public int getTime(){
 		return timeNeeded;
 	}
-  
+ 
 	public String toString(){
-		return String.format("          Description.          |  Priority.  | Time needed\n%-35s| %-9s| %d mins", description, priority, timeNeeded);
+		return String.format("%-22s| %-9s| %d mins", description, priority, timeNeeded);
 	}
 }
