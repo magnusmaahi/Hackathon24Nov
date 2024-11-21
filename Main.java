@@ -2,67 +2,64 @@ import java.util.*;
 
 import static java.lang.System.out;
 
-public class Main{
-    public static void main(String[] args){
+public class Main {
+    public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
         ArrayList<Task> tasks = new ArrayList<>();
         out.println("TO-DO List");
         out.print("Create your list");
-        int a , c, d, e, f;
-        String b, priority;
-        
-        do{
+        int opt, pN, t;
+        String tN;
+
+        do {
             //main menu
-            out.println("1.Create a new task\n2.Print my task(s)\n3.Change the status of my task");
-            a = s.nextInt();
+            out.println("1. Create a new task\n2. Print my task list(s)\n3. Exit");
+            opt = s.nextInt();
+        } while (c) {
             //Option 1
-            if(a == 1){
-                out.print("Task name? (Character limit 35): ");
-                b = s.nextLine();
-            while(b.length() > 35){
-                out.println("Oops!! You exceeded the character limit. Abbreviate PLS");
-                out.print("Task name? (Character limit 35): ");
-                b = s.nextLine();
+            if (opt == 1) {
+                out.print("Task name? (Character limit 40): ");
+                tN = s.nextLine();
+                
+                while (tN.length() > 40) {
+                    out.println("Oops!! You exceeded the character limit. Shorten PLS");
+                    out.print("Task name? (Character limit 40): ");
+                    tN = s.nextLine();
+                }
+
+                //priority
+                out.print("\nPick your priority (1- RIGHT NOW! 2 - ASAP 3- End of Day): ");
+                pN = s.nextInt();
+                    
+                //time needed
+                out.print("\nEstimate how long this task might take you (in hours and minutes): ");//we can offer a time using our clock lab we did in cs3
+                int h = s.nextInt();
+                int m = s.nextInt();
+                t = time(h, m); 
+                    
+                tasks.add(new Task(tN, pN, t));
             }
-            //priority
-            out.print("Pick your priority (1- RIGHT NOW! 2 - ASAP 3- End of Day): ");
-            c = s.nextInt();
-            if(c == 1){
-                priority = "Right NOW!";
-            }
-            else if(c == 2){
-                priority = "ASAP";
-            }
-            else{
-                priority = "End of Day";
-            }
-            //time needed
-            out.print("Estimate how long this task might take you (in minutes): ");//we can offer a time using our clock lab we did in cs3
-            d = s.nextInt();
-            tasks.add(new Task(b, priority, d));
-        }
         
-        //Option 2
-        else if(a== 2){
-            if (tasks.isEmpty()){
-                out.println("GUESS WHAT!! you got no tasks");
+            //Option 2
+            else if (opt == 2){
+                if (tasks.size() == 0) {
+                    out.println("GUESS WHAT!! you got no tasks");
+                }
+                else {
+                    printTasks(tasks);
+                }
             }
-            else{
-                printTasks(tasks);
-            }
-        }
-        
-        //Option 3
-        else if(a == 3){
-            int length = tasks.size();
-            if(tasks.isEmpty()){
-                out.println("You have no tasks to change:))))");
-            }
-            else{
-                out.println("Pick the task number: ");
+
+            //Option 3
+            else {
+                c = false;
+                break;
             }
         }
-        } while(!tasks.isEmpty());
+    }
+
+    public static int time(int h, int m) {
+        return m + (h * 60);
     }
 
     public static void printTasks(ArrayList<Task> list) {
@@ -70,9 +67,7 @@ public class Main{
         for(int i = 0; i< list.size(); i++){
             ArrayList<Task> temp = new ArrayList<>();
             for(Task task: list){
-                if(task.get() == sorted.get()) {
-                  System.out.println("1");
-                }
+                System.out.println(task);
             }
         }
     }  
