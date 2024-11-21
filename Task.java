@@ -15,6 +15,7 @@ public class Task{
 	public void setCompleted(boolean status){
 		this.isCompleted = status;
 	}
+	
 	//getter methods
 	public boolean getStatus(){
 		return isCompleted;
@@ -29,6 +30,6 @@ public class Task{
 	}
  
 	public String toString(){
-		return String.format("%-22s| %-9s| %d mins", description, priority, timeNeeded);
+		return String.format("%-22s|     %d    | %d mins", description, priority, timeNeeded);
 	}
 }
