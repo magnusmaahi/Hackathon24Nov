@@ -63,12 +63,33 @@ public class Main {
     }
 
     public static void printTasks(ArrayList<Task> list) {
-        ArrayList<Task> sorted = new ArrayList<>();
-        for(int i = 0; i< list.size(); i++){
-            ArrayList<Task> temp = new ArrayList<>();
-            for(Task task: list){
-                System.out.println(task);
+    HashMap<Integer, ArrayList<Task>> map = new HashMap<>();
+    int index = 0;
+
+    // Populate the HashMap with tasks grouped by priority
+    while (index < list.size()) {
+        int priority = list.get(index).getPriority();
+        Task t = list.get(index);
+
+        if (map.containsKey(priority)) {
+            map.get(priority).add(t);
+        } else {
+            ArrayList<Task> taskList = new ArrayList<>();
+            taskList.add(t);
+            map.put(priority, taskList);
+        }
+        index++;
+    } // End of while loop
+
+    // Print tasks grouped by priority
+    for (int i = 1; i <= 4; i++) {
+        ArrayList<Task> taskList = map.get(i); // Get the list for priority i
+
+        if (taskList != null) { // Check to avoid NullPointerException
+            for (Task t : taskList) {
+                System.out.println(t.toString());
             }
         }
-    }  
+    } // End of printing tasks
+} // End of method  
 }
