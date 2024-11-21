@@ -7,7 +7,7 @@ public class Main {
 		ArrayList<Task> toDo = new ArrayList<>();
 		ArrayList<Task> done = new ArrayList<>();
 		out.println("---- TO-DO List ----");
-		out.println("\nCreate your list:");
+		out.println("\nCreate your holiday to-do list:");
 		int opt, pN, t;
 		String tN;
 
